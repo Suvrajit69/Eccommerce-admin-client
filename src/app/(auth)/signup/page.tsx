@@ -1,12 +1,9 @@
-"user client";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { cn } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import SignUpForm from "./_components/signUpForm";
 
 const signUpPage = () => {
+  
   return (
     <section
       id="signUpContainer"
@@ -27,52 +24,7 @@ const signUpPage = () => {
             <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
-
-        <section id="signUpForm" className="grid gap-6">
-          <form>
-            <div className="grid gap-2 px-4 md:px-0">
-              <div className="grid grid-cols-2 gap-1 py-2">
-                <div>
-                  <Label htmlFor="firstName">First Name</Label>
-                  <Input
-                    className={cn({
-                      "focus-visible:ring-red-500": true,
-                    })}
-                    placeholder="what is your first name?"
-                  />
-                </div>
-                <div>
-                  <Label htmlFor="lastName">Last Name</Label>
-                  <Input
-                    className={cn({
-                      "focus-visible:ring-red-500": true,
-                    })}
-                    placeholder="what is your first name?"
-                  />
-                </div>
-              </div>
-              <div className="grid gap-1 py-2">
-                <Label htmlFor="email">Email</Label>
-                <Input
-                  className={cn({
-                    "focus-visible:ring-red-500": true,
-                  })}
-                  placeholder="what is your email?"
-                />
-              </div>
-              <div className="grid gap-1 py-2">
-                <Label htmlFor="password">Password</Label>
-                <Input
-                  className={cn({
-                    "focus-visible:ring-red-500": true,
-                  })}
-                  placeholder="write a strong password?"
-                />
-              </div>
-              <Button type="submit">Sign up</Button>
-            </div>
-          </form>
-        </section>
+        <SignUpForm />
       </div>
     </section>
   );
